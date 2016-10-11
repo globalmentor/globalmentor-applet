@@ -20,7 +20,7 @@ import java.applet.*;
 
 import javax.sound.sampled.*;
 
-import static com.globalmentor.java.Objects.*;
+import static java.util.Objects.*;
 
 /**
  * A concrete implementation of an applet {@link AudioClip} using the Java sound interface {@link Clip}.
@@ -37,7 +37,7 @@ public class ClipAudioClip implements AudioClip {
 	 * @throws NullPointerException if the given clip is <code>null</code>.
 	 */
 	public ClipAudioClip(final Clip clip) {
-		this.clip = checkInstance(clip, "Clip cannot be null."); //store the clip
+		this.clip = requireNonNull(clip, "Clip cannot be null."); //store the clip
 	}
 
 	/**
